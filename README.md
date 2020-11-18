@@ -1,67 +1,61 @@
-# Back End Test Project
-You should see this challenge as an opportunity to create an application following modern development best practices (given the stack of your choice), but also feel free to use your own architecture preferences (coding standards, code organization, third-party libraries, etc). It’s perfectly fine to use vanilla code or any framework or libraries.
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## Scope
-In this challenge you should build an API for an application such as a social event network that implements the following features:
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-__NOTE:__ the implementation of an interface will not be evaluated.
+## About Laravel
 
-### Public Area
-1. __A public event list:__ When accessing the main route, the application should show a list of all the events registered, paging them every 10 events;
-- 1.1 The user should be able to filter the list of events by dates, or regions;
-2. __Event details:__ the application must allow the user to see the details of the event, by clicking on the event listing, or accessing the event link;
-3. __User signup:__ the application should allow the user to register by informing: Name, Email, Password, Bio, Profile Picture, City, and State;
-4. __User login:__ The application should allow the user to login using their credentials;
-- 4.1 The login should persist when the application is closed, or reloaded;
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Logged Area
-5. __Friend invitation:__ the application will allow the user to enter an email to add as a friend;
-6. __Add as friend:__ The informed user should receive a friend request, or an invitation to register, if they are not already a user;
-7. __Friendship management:__ the user will be able to see your new friend requests, list your friends, and undo friendships;
-8. __Event registration:__ the application should allow the user to register an event by informing: Name, Description, Date, Time, and Place;
-- 8.1 The user should be able to edit and cancel events their events;
-9. __Invite friends to event:__ the user can invite their friends to events, being able to invite all friends, or only the selected ones;
-- 9.1 If the user has already been invited to the event, regardless of their status (confirmed, rejected, awaiting confirmation), the invited user should not be notified of the invitation again;
-10. __My event list:__ the user should be able to see their events, being able to filter them by those who will participate, and the ones that he created;
-11. __Manage event invitations:__ The user can accept, or reject, attend events.
-12. __Events management:__ The user can view their rejected events and undo rejections, deciding to participate, if the event has not yet occurred;
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Requirements
-1. Create project using any technology of your preference. It’s perfectly OK to use vanilla code or any framework or libraries;
-2. Although you can use as many dependencies as you want, you should manage them wisely;
-3. The API should be covered by unit tests;
-4. It is not necessary to send the notification emails, however, the code required for that would be welcome;
-5. The API must be documented in some way.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Deliverables
-The project source code and dependencies should be made available in GitHub. Here are the steps you should follow:
-1. Fork this repository to your GitHub account (create an account if you don't have one, you will need it working with us).
-2. Create a "development" branch and commit the code to it. Do not push the code to the master branch.
-3. Include a README file that describes:
-  - Special build instructions, if any
-  - List of third-party libraries used and short description of why/how they were used
-4. Once the work is complete, create a pull request from "development" into "master" and send us the link.
-5. Avoid using huge commits hiding your progress. Feel free to work on a branch and use rebase to adjust your commits before submitting the final version.
+## Learning Laravel
 
-## Coding Standards
-When working on the project be as clean and consistent as possible.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Project Deadline
-Ideally you'd finish the test project in 5 days. It shouldn't take you longer than a entire week.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Quality Assurance
-Use the following checklist to ensure high quality of the project.
+## Laravel Sponsors
 
-### General
-- First of all, the application should run without errors.
-- Are all requirements set above met?
-- Is coding style consistent?
-- The API is well documented?
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-## Submission
-1. A link to the Github repository.
-2. Briefly describe how you decided on the tools that you used.
+### Premium Partners
 
-## Have Fun Coding 🤘
-- This challenge description is intentionally vague in some aspects, but if you need assistance feel free to ask for help.
-- If any of the seens out of your current level, you may skip it, but remember to tell us about it in the pull request.
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[OP.GG](https://op.gg)**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
