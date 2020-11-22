@@ -82,7 +82,7 @@ request. A Token can be acquired from the Login view above.
 
 * [Friendship Invitation List](api_docs/get_event_invitation.md) : `GET /api/friendship_invitation/`
 * [Invite a friend](api_docs/post_event_invitation.md) : `POST /api/friendship_invitation/`
-* [Accept Friend Invitation](api_docs/put_event_invitation.md) : `POST /api/friendship_invitation/{id_friendship_invitation}`
+* [Accept Friend Invitation](api_docs/put_event_invitation.md) : `PUT /api/friendship_invitation/{id_friendship_invitation}`
 * [Declines Friend Invitation](api_docs/delete_friendship_invitation.md) : `DELETE /api/friendship_invitation/{id_friendship_invitation}`
 
 ### Friendship

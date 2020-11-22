@@ -1,10 +1,10 @@
 # Event Invitation
 
-You can invite some or all of you friends, if you want to invite all, you have to pass the param type=all as a URL PARAM, if you want to invite some friends, you don't pass the URL PARAM, and you have to send a array of ids, with the users tha want to invite
+Update Event Invitation
 
 **URL** : `api/event/{id_event}/invitation/{id_event_invitation}`
 
-**Method** : `POST`
+**Method** : `PUT`
 
 **Auth required** : YES
 
