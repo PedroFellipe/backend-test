@@ -1,6 +1,6 @@
 # Event
 
-Creates a new Event in the system.
+Delete a event.
 
 **URL** : `api/event/{id_event}`
 

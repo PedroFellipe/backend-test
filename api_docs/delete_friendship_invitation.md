@@ -1,6 +1,6 @@
 # Friendship Invitation
 
-Accepts a friendship invitation.
+Declines as friendship invitation.
 
 **URL** : `api/friendship_invitation/{friendship_invitation_id}`
 

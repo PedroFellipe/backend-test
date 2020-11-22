@@ -1,6 +1,6 @@
 # Friendship Invitation
 
-Accepts a friendship invitation.
+Delete a friend.
 
 **URL** : `api/friendship/{friendship_invitation_id}`
 

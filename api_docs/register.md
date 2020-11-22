@@ -1,6 +1,6 @@
 # Register
 
-Used to collect a Token for a registered User.
+Register a User in the system.
 
 **URL** : `api/auth/register`
 
