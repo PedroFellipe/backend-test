@@ -80,14 +80,14 @@ request. A Token can be acquired from the Login view above.
 
 ### Friendship Invitation
 
-* [Friendship Invitation List](api_docs/get_event_invitation.md) : `GET /api/friendship_invitation/`
-* [Invite a friend](api_docs/post_event_invitation.md) : `POST /api/friendship_invitation/`
-* [Accept Friend Invitation](api_docs/put_event_invitation.md) : `PUT /api/friendship_invitation/{id_friendship_invitation}`
+* [Friendship Invitation List](api_docs/get_friendship_invitation.md) : `GET /api/friendship_invitation/`
+* [Invite a friend](api_docs/post_friendship_invitation.md) : `POST /api/friendship_invitation/`
+* [Accept Friend Invitation](api_docs/put_friendship_invitation.md) : `PUT /api/friendship_invitation/{id_friendship_invitation}`
 * [Declines Friend Invitation](api_docs/delete_friendship_invitation.md) : `DELETE /api/friendship_invitation/{id_friendship_invitation}`
 
 ### Friendship
 * [Friendship List](api_docs/get_friendship.md) : `GET /api/friendship/`
-* [Remove a friend](api_docs/delete_friendship_invitation.md) : `DELETE /api/friendship/{id_friendship}`
+* [Remove a friend](api_docs/delete_friendship.md) : `DELETE /api/friendship/{id_friendship}`
 
 ### Events
 * [My Events](api_docs/get_user_events.md) : `GET /api/user/event`
@@ -98,6 +98,6 @@ request. A Token can be acquired from the Login view above.
 ### Invitations to Event
 * [My invitations to events](api_docs/get_event_invitation.md) : `GET /api/user/invitation`
 * [Invite to a event](api_docs/post_event_invitation.md) : `POST /api/event/{id_event}/invitation`
-* [Update Event Invitation Status](api_docs/put_event.md) : `PUT /api/event/{id_event}/invitation/{id_event_invitation}`
+* [Update Event Invitation Status](api_docs/put_event_invitation.md) : `PUT /api/event/{id_event}/invitation/{id_event_invitation}`
 
 **Obs.:when a user invites someone with an email that is not registered in the system, an invitation email will be sent to that person, in the current settings, that email is available in `` storage/logs/laravel.log`` if you wish send the actual email, you must change the settings in the .env file

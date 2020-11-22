@@ -2,7 +2,7 @@
 
 Delete a friend.
 
-**URL** : `api/friendship/{friendship_invitation_id}`
+**URL** : `api/friendship/{friendship_id}`
 
 **Method** : `DELETE`
 
