@@ -6,25 +6,26 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class UserResource extends JsonResource
+class EventResource extends JsonResource
 {
+
     /**
      * Transform the resource into an array.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param $request
      * @return array
      */
     public function toArray($request)
     {
         return [
             'id' => $this->id,
+            'user' => new UserResource($this->user),
             'name' => $this->name,
-            'email' => $this->email,
-            'bio' => $this->bio,
-            'city' => $this->city,
-            'state' => $this->state,
-            'profile_picture' => new AttachmentsResource($this->profile_picture)
-
+            'description' => $this->description,
+            'date' => $this->date,
+            'time' => $this->time,
+            'place' => $this->place,
+            'canceled' => $this->cancel,
         ];
     }
 }

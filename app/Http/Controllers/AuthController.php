@@ -4,21 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Repository\AttachmentRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
 
-class AuthController extends Controller {
+class AuthController extends Controller
+{
+
+    protected $attachmentRepository;
 
     /**
      * Create a new AuthController instance.
      *
-     * @return void
+     * @param AttachmentRepository $attachment
      */
-    public function __construct() {
+    public function __construct(AttachmentRepository $attachment)
+    {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->attachmentRepository = $attachment;
+
     }
 
     /**
@@ -26,7 +33,8 @@ class AuthController extends Controller {
      *
      * @return JsonResponse
      */
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
@@ -36,7 +44,7 @@ class AuthController extends Controller {
             return response()->json($validator->errors(), 422);
         }
 
-        if (! $token = auth()->attempt($validator->validated())) {
+        if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
@@ -49,15 +57,24 @@ class AuthController extends Controller {
      * @param RegisterRequest $request
      * @return JsonResponse
      */
-    public function register(RegisterRequest $request) {
+    public function register(RegisterRequest $request)
+    {
+
+        $data = $request->validated();
+
+        if (isset($data['profile_picture'])) {
+
+            $attachment = $this->attachmentRepository->uploadAttachment($data['profile_picture']);
+            $data['profile_picture_id'] = $attachment->id;
+
+        }
 
         $user = User::create(array_merge(
-            $request->validated(),
+            $data,
             ['password' => bcrypt($request->password)]
         ));
 
         return new JsonResponse(new UserResource($user), JsonResponse::HTTP_CREATED);
-
     }
 
 
@@ -66,7 +83,8 @@ class AuthController extends Controller {
      *
      * @return JsonResponse
      */
-    public function logout() {
+    public function logout()
+    {
         auth()->logout();
 
         return response()->json(['message' => 'User successfully signed out']);
@@ -77,7 +95,8 @@ class AuthController extends Controller {
      *
      * @return JsonResponse
      */
-    public function refresh() {
+    public function refresh()
+    {
         return $this->createNewToken(auth()->refresh());
     }
 
@@ -86,18 +105,20 @@ class AuthController extends Controller {
      *
      * @return JsonResponse
      */
-    public function userProfile() {
+    public function userProfile()
+    {
         return response()->json(auth()->user());
     }
 
     /**
      * Get the token array structure.
      *
-     * @param  string $token
+     * @param string $token
      *
      * @return JsonResponse
      */
-    protected function createNewToken($token){
+    protected function createNewToken($token)
+    {
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',

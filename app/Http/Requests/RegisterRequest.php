@@ -25,6 +25,10 @@ class RegisterRequest extends BaseRequest
             'name' => 'required|string|between:2,100',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
+            'bio' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'profile_picture' => 'file|mimes:png,jpeg'
         ];
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class UserResource extends JsonResource
+class FriendShipListResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,15 +16,14 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'bio' => $this->bio,
-            'city' => $this->city,
-            'state' => $this->state,
-            'profile_picture' => new AttachmentsResource($this->profile_picture)
 
+        return [
+            'id' => $this->pivot->id,
+            'user' => [
+                'id' => $this->id,
+                'name' => $this->name,
+                'email' => $this->email
+            ]
         ];
     }
 }
