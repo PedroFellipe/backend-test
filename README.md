@@ -69,7 +69,7 @@ When performing unit tests, you should receive this as a result
 Open endpoints require no Authentication.
 
 * [Login](api_docs/login.md) : `POST /api/auth/login/`
-* [Register](api_docs/register.md) : `POST /api/login/`
+* [Register](api_docs/register.md) : `POST /api/auth/register/`
 * [Event List](api_docs/get_events.md) : `GET /api/event/`
 * [Event Info](api_docs/get_event.md) : `GET /api/event/{id}`
 
