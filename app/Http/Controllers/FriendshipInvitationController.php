@@ -92,9 +92,9 @@ class FriendshipInvitationController extends Controller
             return new JsonResponse(['message' => 'This friend request has already been accepted !!'], JsonResponse::HTTP_BAD_REQUEST);
         }
 
-        //TODO: fazer algumas verificações
-        // verificar se o convite é para o usuário logado
-
+        if ($friendship->second_user_id != Auth::user()->id) {
+            return new JsonResponse(['message' => 'This friend request is not for you!!'], JsonResponse::HTTP_BAD_REQUEST);
+        }
 
         try {
             DB::beginTransaction();
@@ -128,7 +128,10 @@ class FriendshipInvitationController extends Controller
             return new JsonResponse(['message' => 'This friend request has already been accepted !!'], JsonResponse::HTTP_NOT_FOUND);
         }
 
-        //TODO: Fazer algumas verificações
+        if ($friendship->second_user_id != Auth::user()->id) {
+            return new JsonResponse(['message' => 'This friend request is not for you!!'], JsonResponse::HTTP_BAD_REQUEST);
+        }
+
 
         try {
             DB::beginTransaction();

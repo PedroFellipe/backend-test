@@ -45,3 +45,14 @@ Accepts a friendship invitation.
 }
 ```
 
+**Condition** : If the friend request is not for you
+
+**Code** : `400 Bad Request`
+
+**Example Content** :
+
+```json
+{
+   "message": "This friend request is not for you"
+}
+```

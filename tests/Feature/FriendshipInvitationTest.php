@@ -174,7 +174,7 @@ class FriendshipInvitationTest extends TestCase
     }
 
     /**
-     * Test Post Friendship
+     * Test Put Friendship
      *
      * @return void
      */
@@ -196,7 +196,7 @@ class FriendshipInvitationTest extends TestCase
     }
 
     /**
-     * Test Post Friendship
+     * Test Put Friendship
      *
      * @return void
      */
@@ -212,9 +212,30 @@ class FriendshipInvitationTest extends TestCase
             'confirmed' => 0
         ]);
 
-        // Test validation with no data in payload
+
         $response = $this->put(route('friendship_invitation.update', $friendship->id));
         $response->assertStatus(200);
+    }
+
+    /**
+     * Test Put Friendship
+     *
+     * @return void
+     */
+    public function testPutFriendshipNotForYou()
+    {
+
+        $user = User::factory()->create();
+
+        $friendship = Friendship::factory()->create([
+            'first_user_id' => $user->id,
+            'email' => $this->user->email,
+            'confirmed' => 0
+        ]);
+
+
+        $response = $this->put(route('friendship_invitation.update', $friendship->id));
+        $response->assertStatus(400)->assertExactJson(['message' => 'This friend request is not for you!!']);
     }
 
     /**
@@ -224,9 +245,30 @@ class FriendshipInvitationTest extends TestCase
      */
     public function testDeleteFriendshipNotFound()
     {
-        // Test validation with no data in payload
         $response = $this->delete(route('friendship_invitation.destroy', 100));
         $response->assertStatus(404)->assertExactJson(['message' => 'Friendship request not found!!']);
+    }
+
+
+    /**
+     * Test Delete Friendship
+     *
+     * @return void
+     */
+    public function testDeleteFriendshipNotForYou()
+    {
+
+        $user = User::factory()->create();
+
+        $friendship = Friendship::factory()->create([
+            'first_user_id' => $user->id,
+            'email' => $this->user->email,
+            'confirmed' => 0
+        ]);
+
+
+        $response = $this->delete(route('friendship_invitation.destroy', $friendship->id));
+        $response->assertStatus(400)->assertExactJson(['message' => 'This friend request is not for you!!']);
     }
 
 

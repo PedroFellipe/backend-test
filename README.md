@@ -56,6 +56,11 @@ Then, access the URL:
 Execution of unit tests:
 
     php artisan test
+
+When performing unit tests, you should receive this as a result
+    
+  ![Alt text](unit_tests.png?raw=true "Title")
+
     
 # Api Doc
 

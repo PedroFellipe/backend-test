@@ -66,4 +66,15 @@ Accepts a friendship invitation.
    "message": "This friend request has already been accepted !"
 }
 ```
+**Condition** : If the friend request is not for you
+
+**Code** : `400 Bad Request`
+
+**Example Content** :
+
+```json
+{
+   "message": "This friend request is not for you"
+}
+```
 
