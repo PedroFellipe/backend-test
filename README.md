@@ -7,6 +7,7 @@ Technologies Used:
  * PHP v7.3 or higher
  * Laravel v8.12
  * MySql v8.0.22
+ * tymon/jwt-auth
 
 Project Installation and Execution
 ------------
@@ -39,6 +40,9 @@ Run the command below to generate the application key:
 
     php artisan key:generate
 
+Generating a JWT Secret Key
+
+    php artisan jwt:secret 
 
 To run the application run the laravel server:
 
@@ -48,10 +52,7 @@ Then, access the URL:
 
     http://localhost:8000/
 
-Generating a JWT Secret Key
-
-    php artisan jwt:generate    
-    
+      
 Execution of unit tests:
 
     php artisan test

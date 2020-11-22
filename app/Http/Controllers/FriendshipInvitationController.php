@@ -94,7 +94,7 @@ class FriendshipInvitationController extends Controller
 
         //TODO: fazer algumas verificações
         // verificar se o convite é para o usuário logado
-       
+
 
         try {
             DB::beginTransaction();
