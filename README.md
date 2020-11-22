@@ -100,4 +100,4 @@ request. A Token can be acquired from the Login view above.
 * [Invite to a event](api_docs/post_event_invitation.md) : `POST /api/event/{id_event}/invitation`
 * [Update Event Invitation Status](api_docs/put_event_invitation.md) : `PUT /api/event/{id_event}/invitation/{id_event_invitation}`
 
-**Obs.:when a user invites someone with an email that is not registered in the system, an invitation email will be sent to that person, in the current settings, that email is available in `` storage/logs/laravel.log`` if you wish send the actual email, you must change the settings in the .env file
+**Obs.:when a user invites someone with an email that is not registered in the system, an invitation email will be sent to that person, in the current settings, that email is available in `` storage/logs/laravel.log`` if you wish send the actual email, you must change the settings in the .env file.
