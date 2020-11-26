@@ -21,6 +21,11 @@ class EventInvitation extends BaseModel
         'status'
     ];
 
+    protected $searchable = [
+        'user_id' => 'like'
+    ];
+
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
